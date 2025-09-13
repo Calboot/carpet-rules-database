@@ -22,7 +22,7 @@ jobs:
             -   name: Setup Bun
                 uses: oven-sh/setup-bun@v2
                 with:
-                      bun-version: latest
+                    bun-version: latest
 
             -   name: Cache Dependencies
                 uses: actions/cache@v4
@@ -41,7 +41,7 @@ jobs:
                 run: |
                     git_hash=$(git rev-parse --short "$GITHUB_SHA")
                     echo "{\"sha\": \"$git_hash\"}" > ./src/lib/assets/sha.json
-            
+
             -   name: Copy rules
                 run: cp ./data/parsed_data.json ./frontend/src/lib/assets/rules.json
 
